@@ -7,4 +7,3 @@ def dot_product(vector_x, vector_y):
         result += vector_x[i] * vector_y[i]
     print(f"dot product result is {result}.")
     return result
-
