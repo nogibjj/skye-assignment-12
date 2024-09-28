@@ -1,42 +1,35 @@
-[![Dotproduct](https://github.com/nogibjj/skye-assignment-1/actions/workflows/action.yml/badge.svg)](https://github.com/nogibjj/skye-assignment-1/actions/workflows/action.yml)
+[![CICD](https://github.com/nogibjj/skye-assignment-4/actions/workflows/CICD.yml/badge.svg)](https://github.com/nogibjj/skye-assignment-4/actions/workflows/CICD.yml)
 
-# DotProduct Calculation
+# README
 
-This project computes the dot product of two vectors using a Python script. The project is integrated with GitHub Actions for continuous integration.
+## Project Overview
 
-## Usage
+The purpose of this project is to establish a GitHub Actions workflow that tests across multiple Python versions to ensure the code's stability and compatibility with different environments. This setup leverages GitHub Actions to automate Continuous Integration and Continuous Deployment (CI/CD) processes, ensuring code is tested, formatted, and linted across multiple Python versions. By implementing a build matrix, we can verify that the project functions correctly on Python 3.9, 3.10, 3.11, and 3.12.
 
-To calculate the dot product of two vectors:
+## Key Features
 
-```bash
-python3 dotp.py [vector_x] [vector_y]
-```
+- **CI/CD Pipeline**: Automatically triggered on push and pull request events for the `main` branch, or manually via workflow dispatch.
+- **Multi-Version Testing**: Utilizes GitHub Actions' matrix strategy to run tests on Python versions 3.9, 3.10, 3.11, and 3.12.
+- **Automated Testing and Formatting**: The workflow includes steps to install dependencies, run tests, format code, and lint for code quality checks.
 
-Example:
+## Workflow Breakdown
 
+1. **Trigger Events**:
+   - The workflow runs on every push and pull request targeting the `main` branch.
+   - It can also be manually triggered via workflow dispatch.
 
-```bash
-python3 dotp.py [1,2,3] [4,5,6]
-```
+2. **Jobs**:
+   - **Build and Test**:
+     - The `build` job runs on the `ubuntu-latest` runner.
+     - It uses a matrix to test across multiple Python versions.
+     - Steps include checking out the code, setting up Python, installing dependencies via `make install`, and running tests, formatting, and linting with `make test`, `make format`, and `make lint`, respectively.
 
-Output:
+## Requirements
 
-```bash
-dot product result is 32.
-```
+- **GitHub Actions Workflow**: Set up to test across at least 3 different Python versions using the matrix strategy.
+- **Correctly Configured GitHub Actions Matrix**: Ensures the workflow runs efficiently across Python 3.9, 3.10, 3.11, and 3.12.
+- **Passing CI/CD**: The workflow ensures that the code is successfully tested, formatted, and linted for each Python version in the matrix.
 
-## GitHub Actions Workflow
+## Conclusion
 
-The workflow is triggered on push, pull request, and manual events to the master branch. It performs the following steps:
-
-Setup: `make setup`
-Lint: `make lint`
-Test: `make test`
-Run: `make run`
-
-# Requirements
-
-- [x] python project skeleton.
-- [x] devcontainer with devcontainer.json and Dockerfile
-- [x] Makefile with setup, test, and lint
-- [x] README.md with setup and usage instructions
+This project demonstrates how to set up a robust GitHub Actions CI/CD pipeline with multi-version Python testing. By ensuring compatibility and stability across multiple Python environments, the project maintains high code quality and reliability.
