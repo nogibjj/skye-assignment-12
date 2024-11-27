@@ -1,5 +1,5 @@
-[![CICD](https://github.com/nogibjj/skye-assignment-4/actions/workflows/CICD.yml/badge.svg)](https://github.com/nogibjj/skye-assignment-4/actions/workflows/CICD.yml)
-
+[![CICD](https://github.com/nogibjj/skye-assignment-12/actions/workflows/CICD.yml/badge.svg)](https://github.com/nogibjj/skye-assignment-12/actions/workflows/CICD.yml)
+[![Link to docker image](https://www.docker.com/wp-content/uploads/2023/08/logo-guide-logos-1.svg)](https://hub.docker.com/r/skyea/skye_mini_project_12)
 # README
 
 ## Project Overview
